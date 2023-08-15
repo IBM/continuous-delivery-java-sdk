@@ -361,10 +361,10 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
 
       Property propertyResult = response.getResult();
       assertNotNull(propertyResult);
-      assertNotNull(propertyResult.href());
-      assertEquals(propertyResult.name(), propertyName);
-      assertEquals(propertyResult.type(), "text");
-      assertEquals(propertyResult.value(), "prop1Value");
+      assertNotNull(propertyResult.getHref());
+      assertEquals(propertyResult.getName(), propertyName);
+      assertEquals(propertyResult.getType(), "text");
+      assertEquals(propertyResult.getValue(), "prop1Value");
     } catch (ServiceResponseException e) {
         fail(String.format("Service returned status code %d: %s%nError details: %s",
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
@@ -387,10 +387,10 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
 
       Property propertyResult = response.getResult();
       assertNotNull(propertyResult);
-      assertNotNull(propertyResult.href());
-      assertEquals(propertyResult.name(), propertyName);
-      assertEquals(propertyResult.type(), "text");
-      assertEquals(propertyResult.value(), "prop1Value");
+      assertNotNull(propertyResult.getHref());
+      assertEquals(propertyResult.getName(), propertyName);
+      assertEquals(propertyResult.getType(), "text");
+      assertEquals(propertyResult.getValue(), "prop1Value");
     } catch (ServiceResponseException e) {
         fail(String.format("Service returned status code %d: %s%nError details: %s",
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
@@ -416,10 +416,10 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
 
       Property propertyResult = response.getResult();
       assertNotNull(propertyResult);
-      assertNotNull(propertyResult.href());
-      assertEquals(propertyResult.name(), propertyName);
-      assertEquals(propertyResult.type(), "text");
-      assertEquals(propertyResult.value(), "editedValue");
+      assertNotNull(propertyResult.getHref());
+      assertEquals(propertyResult.getName(), propertyName);
+      assertEquals(propertyResult.getType(), "text");
+      assertEquals(propertyResult.getValue(), "editedValue");
     } catch (ServiceResponseException e) {
         fail(String.format("Service returned status code %d: %s%nError details: %s",
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
@@ -443,10 +443,10 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
       PropertiesCollection propertiesCollectionResult = response.getResult();
       assertNotNull(propertiesCollectionResult);
       Property propertyResult = propertiesCollectionResult.getXProperties().get(0);
-      assertNotNull(propertyResult.href());
-      assertEquals(propertyResult.name(), propertyName);
-      assertEquals(propertyResult.type(), "text");
-      assertEquals(propertyResult.value(), "editedValue");
+      assertNotNull(propertyResult.getHref());
+      assertEquals(propertyResult.getName(), propertyName);
+      assertEquals(propertyResult.getType(), "text");
+      assertEquals(propertyResult.getValue(), "editedValue");
     } catch (ServiceResponseException e) {
         fail(String.format("Service returned status code %d: %s%nError details: %s",
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));

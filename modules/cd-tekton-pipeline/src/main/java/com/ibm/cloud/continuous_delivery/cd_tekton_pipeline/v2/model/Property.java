@@ -12,7 +12,6 @@
  */
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
@@ -47,164 +46,7 @@ public class Property extends GenericModel {
   protected String type;
   protected String path;
 
-  /**
-   * Builder.
-   */
-  public static class Builder {
-    private String name;
-    private String value;
-    private String href;
-    private List<String> xEnum;
-    private String type;
-    private String path;
-
-    /**
-     * Instantiates a new Builder from an existing Property instance.
-     *
-     * @param property the instance to initialize the Builder with
-     */
-    private Builder(Property property) {
-      this.name = property.name;
-      this.value = property.value;
-      this.href = property.href;
-      this.xEnum = property.xEnum;
-      this.type = property.type;
-      this.path = property.path;
-    }
-
-    /**
-     * Instantiates a new builder.
-     */
-    public Builder() {
-    }
-
-    /**
-     * Instantiates a new builder with required properties.
-     *
-     * @param name the name
-     * @param type the type
-     */
-    public Builder(String name, String type) {
-      this.name = name;
-      this.type = type;
-    }
-
-    /**
-     * Builds a Property.
-     *
-     * @return the new Property instance
-     */
-    public Property build() {
-      return new Property(this);
-    }
-
-    /**
-     * Adds an xEnum to xEnum.
-     *
-     * @param xEnum the new xEnum
-     * @return the Property builder
-     */
-    public Builder addXEnum(String xEnum) {
-      com.ibm.cloud.sdk.core.util.Validator.notNull(xEnum,
-        "xEnum cannot be null");
-      if (this.xEnum == null) {
-        this.xEnum = new ArrayList<String>();
-      }
-      this.xEnum.add(xEnum);
-      return this;
-    }
-
-    /**
-     * Set the name.
-     *
-     * @param name the name
-     * @return the Property builder
-     */
-    public Builder name(String name) {
-      this.name = name;
-      return this;
-    }
-
-    /**
-     * Set the value.
-     *
-     * @param value the value
-     * @return the Property builder
-     */
-    public Builder value(String value) {
-      this.value = value;
-      return this;
-    }
-
-    /**
-     * Set the href.
-     *
-     * @param href the href
-     * @return the Property builder
-     */
-    public Builder href(String href) {
-      this.href = href;
-      return this;
-    }
-
-    /**
-     * Set the xEnum.
-     * Existing xEnum will be replaced.
-     *
-     * @param xEnum the xEnum
-     * @return the Property builder
-     */
-    public Builder xEnum(List<String> xEnum) {
-      this.xEnum = xEnum;
-      return this;
-    }
-
-    /**
-     * Set the type.
-     *
-     * @param type the type
-     * @return the Property builder
-     */
-    public Builder type(String type) {
-      this.type = type;
-      return this;
-    }
-
-    /**
-     * Set the path.
-     *
-     * @param path the path
-     * @return the Property builder
-     */
-    public Builder path(String path) {
-      this.path = path;
-      return this;
-    }
-  }
-
   protected Property() { }
-
-  protected Property(Builder builder) {
-    com.ibm.cloud.sdk.core.util.Validator.notNull(builder.name,
-      "name cannot be null");
-    com.ibm.cloud.sdk.core.util.Validator.notNull(builder.type,
-      "type cannot be null");
-    name = builder.name;
-    value = builder.value;
-    href = builder.href;
-    xEnum = builder.xEnum;
-    type = builder.type;
-    path = builder.path;
-  }
-
-  /**
-   * New builder.
-   *
-   * @return a Property builder
-   */
-  public Builder newBuilder() {
-    return new Builder(this);
-  }
 
   /**
    * Gets the name.
@@ -213,7 +55,7 @@ public class Property extends GenericModel {
    *
    * @return the name
    */
-  public String name() {
+  public String getName() {
     return name;
   }
 
@@ -224,7 +66,7 @@ public class Property extends GenericModel {
    *
    * @return the value
    */
-  public String value() {
+  public String getValue() {
     return value;
   }
 
@@ -235,7 +77,7 @@ public class Property extends GenericModel {
    *
    * @return the href
    */
-  public String href() {
+  public String getHref() {
     return href;
   }
 
@@ -246,7 +88,7 @@ public class Property extends GenericModel {
    *
    * @return the xEnum
    */
-  public List<String> xEnum() {
+  public List<String> getXEnum() {
     return xEnum;
   }
 
@@ -257,7 +99,7 @@ public class Property extends GenericModel {
    *
    * @return the type
    */
-  public String type() {
+  public String getType() {
     return type;
   }
 
@@ -269,7 +111,7 @@ public class Property extends GenericModel {
    *
    * @return the path
    */
-  public String path() {
+  public String getPath() {
     return path;
   }
 }
