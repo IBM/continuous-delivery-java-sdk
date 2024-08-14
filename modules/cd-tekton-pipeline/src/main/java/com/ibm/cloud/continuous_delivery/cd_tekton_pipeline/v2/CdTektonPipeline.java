@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2023.
+ * (C) Copyright IBM Corp. 2024.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.76.0-ad3e6f96-20230724-172814
+ * IBM OpenAPI SDK Code Generator Version: 3.72.0-5d70f2bb-20230511-203609
  */
 
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2;
@@ -322,8 +322,8 @@ public class CdTektonPipeline extends BaseService {
   /**
    * Trigger a pipeline run.
    *
-   * Trigger a new pipeline run with the named manual or timer trigger, using the provided additional or override
-   * properties.
+   * Trigger a new pipeline run using either the manual or the timed trigger, specifying the additional properties or
+   * overriding existing ones as needed.
    *
    * @param createTektonPipelineRunOptions the {@link CreateTektonPipelineRunOptions} containing the options for the call
    * @return a {@link ServiceCall} with a result of type {@link PipelineRun}
@@ -587,8 +587,8 @@ public class CdTektonPipeline extends BaseService {
   /**
    * Retrieve a single definition entry.
    *
-   * This request fetches a single definition entry, which consists of the definition repository URL, branch/tag and
-   * path.
+   * This request fetches a single definition entry, which consists of the definition repository URL, a repository path,
+   * and a branch or tag.
    *
    * @param getTektonPipelineDefinitionOptions the {@link GetTektonPipelineDefinitionOptions} containing the options for the call
    * @return a {@link ServiceCall} with a result of type {@link Definition}
@@ -664,7 +664,7 @@ public class CdTektonPipeline extends BaseService {
   /**
    * List the pipeline's environment properties.
    *
-   * This request lists the environment properties the pipeline identified by `{pipeline_id}`.
+   * This request lists the environment properties of the pipeline identified by  `{pipeline_id}`.
    *
    * @param listTektonPipelinePropertiesOptions the {@link ListTektonPipelinePropertiesOptions} containing the options for the call
    * @return a {@link ServiceCall} with a result of type {@link PropertiesCollection}
@@ -722,6 +722,9 @@ public class CdTektonPipeline extends BaseService {
     if (createTektonPipelinePropertiesOptions.xEnum() != null) {
       contentJson.add("enum", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(createTektonPipelinePropertiesOptions.xEnum()));
     }
+    if (createTektonPipelinePropertiesOptions.locked() != null) {
+      contentJson.addProperty("locked", createTektonPipelinePropertiesOptions.locked());
+    }
     if (createTektonPipelinePropertiesOptions.path() != null) {
       contentJson.addProperty("path", createTektonPipelinePropertiesOptions.path());
     }
@@ -759,7 +762,7 @@ public class CdTektonPipeline extends BaseService {
   /**
    * Replace the value of an environment property.
    *
-   * This request updates the value of an environment property identified by `{property_name}`, its type or name are
+   * This request updates the value of an environment property identified by `{property_name}`, its type and name are
    * immutable.
    *
    * @param replaceTektonPipelinePropertyOptions the {@link ReplaceTektonPipelinePropertyOptions} containing the options for the call
@@ -785,6 +788,9 @@ public class CdTektonPipeline extends BaseService {
     }
     if (replaceTektonPipelinePropertyOptions.xEnum() != null) {
       contentJson.add("enum", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(replaceTektonPipelinePropertyOptions.xEnum()));
+    }
+    if (replaceTektonPipelinePropertyOptions.locked() != null) {
+      contentJson.addProperty("locked", replaceTektonPipelinePropertyOptions.locked());
     }
     if (replaceTektonPipelinePropertyOptions.path() != null) {
       contentJson.addProperty("path", replaceTektonPipelinePropertyOptions.path());
@@ -912,6 +918,9 @@ public class CdTektonPipeline extends BaseService {
     }
     if (createTektonPipelineTriggerOptions.events() != null) {
       contentJson.add("events", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(createTektonPipelineTriggerOptions.events()));
+    }
+    if (createTektonPipelineTriggerOptions.filter() != null) {
+      contentJson.addProperty("filter", createTektonPipelineTriggerOptions.filter());
     }
     if (createTektonPipelineTriggerOptions.favorite() != null) {
       contentJson.addProperty("favorite", createTektonPipelineTriggerOptions.favorite());
@@ -1093,6 +1102,9 @@ public class CdTektonPipeline extends BaseService {
     if (createTektonPipelineTriggerPropertiesOptions.path() != null) {
       contentJson.addProperty("path", createTektonPipelineTriggerPropertiesOptions.path());
     }
+    if (createTektonPipelineTriggerPropertiesOptions.locked() != null) {
+      contentJson.addProperty("locked", createTektonPipelineTriggerPropertiesOptions.locked());
+    }
     builder.bodyJson(contentJson);
     ResponseConverter<TriggerProperty> responseConverter =
       ResponseConverterUtils.getValue(new com.google.gson.reflect.TypeToken<TriggerProperty>() { }.getType());
@@ -1157,6 +1169,9 @@ public class CdTektonPipeline extends BaseService {
     }
     if (replaceTektonPipelineTriggerPropertyOptions.path() != null) {
       contentJson.addProperty("path", replaceTektonPipelineTriggerPropertyOptions.path());
+    }
+    if (replaceTektonPipelineTriggerPropertyOptions.locked() != null) {
+      contentJson.addProperty("locked", replaceTektonPipelineTriggerPropertyOptions.locked());
     }
     builder.bodyJson(contentJson);
     ResponseConverter<TriggerProperty> responseConverter =

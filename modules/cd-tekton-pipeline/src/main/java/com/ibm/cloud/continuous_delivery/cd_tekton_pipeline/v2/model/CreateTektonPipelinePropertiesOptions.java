@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2023.
+ * (C) Copyright IBM Corp. 2024.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -43,6 +43,7 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
   protected String type;
   protected String value;
   protected List<String> xEnum;
+  protected Boolean locked;
   protected String path;
 
   /**
@@ -54,6 +55,7 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
     private String type;
     private String value;
     private List<String> xEnum;
+    private Boolean locked;
     private String path;
 
     /**
@@ -67,6 +69,7 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
       this.type = createTektonPipelinePropertiesOptions.type;
       this.value = createTektonPipelinePropertiesOptions.value;
       this.xEnum = createTektonPipelinePropertiesOptions.xEnum;
+      this.locked = createTektonPipelinePropertiesOptions.locked;
       this.path = createTektonPipelinePropertiesOptions.path;
     }
 
@@ -171,6 +174,17 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
     }
 
     /**
+     * Set the locked.
+     *
+     * @param locked the locked
+     * @return the CreateTektonPipelinePropertiesOptions builder
+     */
+    public Builder locked(Boolean locked) {
+      this.locked = locked;
+      return this;
+    }
+
+    /**
      * Set the path.
      *
      * @param path the path
@@ -196,6 +210,7 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
     type = builder.type;
     value = builder.value;
     xEnum = builder.xEnum;
+    locked = builder.locked;
     path = builder.path;
   }
 
@@ -261,6 +276,18 @@ public class CreateTektonPipelinePropertiesOptions extends GenericModel {
    */
   public List<String> xEnum() {
     return xEnum;
+  }
+
+  /**
+   * Gets the locked.
+   *
+   * When true, this property cannot be overridden by a trigger property or at runtime. Attempting to override it will
+   * result in run requests being rejected. The default is false.
+   *
+   * @return the locked
+   */
+  public Boolean locked() {
+    return locked;
   }
 
   /**

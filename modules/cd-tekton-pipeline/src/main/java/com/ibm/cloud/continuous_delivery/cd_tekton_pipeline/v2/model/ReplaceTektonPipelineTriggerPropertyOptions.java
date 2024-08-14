@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2023.
+ * (C) Copyright IBM Corp. 2024.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -46,6 +46,7 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
   protected String value;
   protected List<String> xEnum;
   protected String path;
+  protected Boolean locked;
 
   /**
    * Builder.
@@ -59,6 +60,7 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
     private String value;
     private List<String> xEnum;
     private String path;
+    private Boolean locked;
 
     /**
      * Instantiates a new Builder from an existing ReplaceTektonPipelineTriggerPropertyOptions instance.
@@ -74,6 +76,7 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
       this.value = replaceTektonPipelineTriggerPropertyOptions.value;
       this.xEnum = replaceTektonPipelineTriggerPropertyOptions.xEnum;
       this.path = replaceTektonPipelineTriggerPropertyOptions.path;
+      this.locked = replaceTektonPipelineTriggerPropertyOptions.locked;
     }
 
     /**
@@ -212,6 +215,17 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
       this.path = path;
       return this;
     }
+
+    /**
+     * Set the locked.
+     *
+     * @param locked the locked
+     * @return the ReplaceTektonPipelineTriggerPropertyOptions builder
+     */
+    public Builder locked(Boolean locked) {
+      this.locked = locked;
+      return this;
+    }
   }
 
   protected ReplaceTektonPipelineTriggerPropertyOptions() { }
@@ -235,6 +249,7 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
     value = builder.value;
     xEnum = builder.xEnum;
     path = builder.path;
+    locked = builder.locked;
   }
 
   /**
@@ -333,6 +348,18 @@ public class ReplaceTektonPipelineTriggerPropertyOptions extends GenericModel {
    */
   public String path() {
     return path;
+  }
+
+  /**
+   * Gets the locked.
+   *
+   * When true, this property cannot be overridden at runtime. Attempting to override it will result in run requests
+   * being rejected. The default is false.
+   *
+   * @return the locked
+   */
+  public Boolean locked() {
+    return locked;
   }
 }
 
