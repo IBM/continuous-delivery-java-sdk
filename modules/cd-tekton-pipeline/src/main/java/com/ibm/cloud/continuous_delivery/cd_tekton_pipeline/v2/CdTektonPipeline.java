@@ -340,6 +340,9 @@ public class CdTektonPipeline extends BaseService {
     }
     builder.header("Accept", "application/json");
     final JsonObject contentJson = new JsonObject();
+    if (createTektonPipelineRunOptions.description() != null) {
+      contentJson.addProperty("description", createTektonPipelineRunOptions.description());
+    }
     if (createTektonPipelineRunOptions.triggerName() != null) {
       contentJson.addProperty("trigger_name", createTektonPipelineRunOptions.triggerName());
     }
@@ -924,6 +927,9 @@ public class CdTektonPipeline extends BaseService {
     }
     if (createTektonPipelineTriggerOptions.favorite() != null) {
       contentJson.addProperty("favorite", createTektonPipelineTriggerOptions.favorite());
+    }
+    if (createTektonPipelineTriggerOptions.enableEventsFromForks() != null) {
+      contentJson.addProperty("enable_events_from_forks", createTektonPipelineTriggerOptions.enableEventsFromForks());
     }
     builder.bodyJson(contentJson);
     ResponseConverter<Trigger> responseConverter =
