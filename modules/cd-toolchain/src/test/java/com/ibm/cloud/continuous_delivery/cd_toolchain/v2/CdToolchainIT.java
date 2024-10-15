@@ -280,6 +280,33 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
   }
 
   @Test(dependsOnMethods = { "testUpdateToolchain" })
+  public void testCreateEventNotificationsTool() throws Exception {
+    try {
+      HashMap<String,Object> params = new HashMap<>();
+      params.put("name", "test-en-tool");
+      params.put("instance-crn", config.get("EVENT_NOTIFICATIONS_SERVICE_CRN"));
+      CreateToolOptions createToolOptions = new CreateToolOptions.Builder()
+        .toolchainId(toolchainIdLink)
+        .toolTypeId("eventnotifications")
+        .parameters(params)
+        .build();
+
+      // Invoke operation
+      Response<ToolchainToolPost> response = service.createTool(createToolOptions).execute();
+
+      // Validate response
+      assertNotNull(response);
+      assertEquals(response.getStatusCode(), 201);
+      
+      ToolchainToolPost toolchainToolPostResult = response.getResult();
+      assertNotNull(toolchainToolPostResult);
+    } catch (ServiceResponseException e) {
+        fail(String.format("Service returned status code %d: %s%nError details: %s",
+          e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
+    }
+  }
+
+  @Test(dependsOnMethods = { "testCreateEventNotificationsTool" })
   public void testCreateToolchainEventApplicationJson() throws Exception {
     try {
       ToolchainEventPrototypeDataApplicationJson toolchainEventPrototypeDataApplicationJsonModel = new ToolchainEventPrototypeDataApplicationJson.Builder()
