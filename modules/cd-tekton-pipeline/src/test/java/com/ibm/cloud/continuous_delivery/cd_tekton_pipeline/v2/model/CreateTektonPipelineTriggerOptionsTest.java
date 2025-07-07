@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -77,6 +77,7 @@ public class CreateTektonPipelineTriggerOptionsTest {
       .tags(java.util.Arrays.asList("testString"))
       .worker(workerIdentityModel)
       .maxConcurrentRuns(Long.valueOf("4"))
+      .limitWaitingRuns(false)
       .enabled(true)
       .secret(genericSecretModel)
       .cron("testString")
@@ -94,6 +95,7 @@ public class CreateTektonPipelineTriggerOptionsTest {
     assertEquals(createTektonPipelineTriggerOptionsModel.tags(), java.util.Arrays.asList("testString"));
     assertEquals(createTektonPipelineTriggerOptionsModel.worker(), workerIdentityModel);
     assertEquals(createTektonPipelineTriggerOptionsModel.maxConcurrentRuns(), Long.valueOf("4"));
+    assertEquals(createTektonPipelineTriggerOptionsModel.limitWaitingRuns(), Boolean.valueOf(false));
     assertEquals(createTektonPipelineTriggerOptionsModel.enabled(), Boolean.valueOf(true));
     assertEquals(createTektonPipelineTriggerOptionsModel.secret(), genericSecretModel);
     assertEquals(createTektonPipelineTriggerOptionsModel.cron(), "testString");

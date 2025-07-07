@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.72.0-5d70f2bb-20230511-203609
+ * IBM OpenAPI SDK Code Generator Version: 3.103.0-e8b84313-20250402-201816
  */
 
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2;
@@ -253,7 +253,7 @@ public class CdTektonPipeline extends BaseService {
     }
     builder.header("Accept", "application/json");
     if (updateTektonPipelineOptions.tektonPipelinePatch() != null) {
-      builder.bodyContent(com.ibm.cloud.sdk.core.util.GsonSingleton.getGsonWithoutPrettyPrinting().toJson(updateTektonPipelineOptions.tektonPipelinePatch()), "application/merge-patch+json");
+      builder.bodyContent(com.ibm.cloud.sdk.core.util.GsonSingleton.getGsonWithSerializeNulls().toJson(updateTektonPipelineOptions.tektonPipelinePatch()), "application/merge-patch+json");
     }
     ResponseConverter<TektonPipeline> responseConverter =
       ResponseConverterUtils.getValue(new com.google.gson.reflect.TypeToken<TektonPipeline>() { }.getType());
@@ -904,6 +904,9 @@ public class CdTektonPipeline extends BaseService {
     if (createTektonPipelineTriggerOptions.maxConcurrentRuns() != null) {
       contentJson.addProperty("max_concurrent_runs", createTektonPipelineTriggerOptions.maxConcurrentRuns());
     }
+    if (createTektonPipelineTriggerOptions.limitWaitingRuns() != null) {
+      contentJson.addProperty("limit_waiting_runs", createTektonPipelineTriggerOptions.limitWaitingRuns());
+    }
     if (createTektonPipelineTriggerOptions.enabled() != null) {
       contentJson.addProperty("enabled", createTektonPipelineTriggerOptions.enabled());
     }
@@ -984,7 +987,7 @@ public class CdTektonPipeline extends BaseService {
     }
     builder.header("Accept", "application/json");
     if (updateTektonPipelineTriggerOptions.triggerPatch() != null) {
-      builder.bodyContent(com.ibm.cloud.sdk.core.util.GsonSingleton.getGsonWithoutPrettyPrinting().toJson(updateTektonPipelineTriggerOptions.triggerPatch()), "application/merge-patch+json");
+      builder.bodyContent(com.ibm.cloud.sdk.core.util.GsonSingleton.getGsonWithSerializeNulls().toJson(updateTektonPipelineTriggerOptions.triggerPatch()), "application/merge-patch+json");
     }
     ResponseConverter<Trigger> responseConverter =
       ResponseConverterUtils.getValue(new com.google.gson.reflect.TypeToken<Trigger>() { }.getType());

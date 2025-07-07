@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -77,6 +77,7 @@ public class TriggerPatchTest {
       .tags(java.util.Arrays.asList("testString"))
       .worker(workerIdentityModel)
       .maxConcurrentRuns(Long.valueOf("4"))
+      .limitWaitingRuns(false)
       .enabled(true)
       .secret(genericSecretModel)
       .cron("testString")
@@ -93,6 +94,7 @@ public class TriggerPatchTest {
     assertEquals(triggerPatchModel.tags(), java.util.Arrays.asList("testString"));
     assertEquals(triggerPatchModel.worker(), workerIdentityModel);
     assertEquals(triggerPatchModel.maxConcurrentRuns(), Long.valueOf("4"));
+    assertEquals(triggerPatchModel.limitWaitingRuns(), Boolean.valueOf(false));
     assertEquals(triggerPatchModel.enabled(), Boolean.valueOf(true));
     assertEquals(triggerPatchModel.secret(), genericSecretModel);
     assertEquals(triggerPatchModel.cron(), "testString");
@@ -112,6 +114,7 @@ public class TriggerPatchTest {
     assertEquals(triggerPatchModelNew.eventListener(), "testString");
     assertEquals(triggerPatchModelNew.worker().toString(), workerIdentityModel.toString());
     assertEquals(triggerPatchModelNew.maxConcurrentRuns(), Long.valueOf("4"));
+    assertEquals(triggerPatchModelNew.limitWaitingRuns(), Boolean.valueOf(false));
     assertEquals(triggerPatchModelNew.enabled(), Boolean.valueOf(true));
     assertEquals(triggerPatchModelNew.secret().toString(), genericSecretModel.toString());
     assertEquals(triggerPatchModelNew.cron(), "testString");
@@ -153,6 +156,7 @@ public class TriggerPatchTest {
       .tags(java.util.Arrays.asList("testString"))
       .worker(workerIdentityModel)
       .maxConcurrentRuns(Long.valueOf("4"))
+      .limitWaitingRuns(false)
       .enabled(true)
       .secret(genericSecretModel)
       .cron("testString")
@@ -172,6 +176,7 @@ public class TriggerPatchTest {
     assertTrue(mergePatch.containsKey("tags"));
     assertTrue(mergePatch.containsKey("worker"));
     assertTrue(mergePatch.containsKey("max_concurrent_runs"));
+    assertTrue(mergePatch.containsKey("limit_waiting_runs"));
     assertTrue(mergePatch.containsKey("enabled"));
     assertTrue(mergePatch.containsKey("secret"));
     assertEquals(mergePatch.get("cron"), "testString");

@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -10,6 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
+
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2.model;
 
 import java.util.List;
@@ -60,6 +61,8 @@ public class Trigger extends GenericModel {
   protected TriggerSource source;
   protected List<String> events;
   protected String filter;
+  @SerializedName("limit_waiting_runs")
+  protected Boolean limitWaitingRuns;
   protected String cron;
   protected String timezone;
   protected GenericSecret secret;
@@ -239,6 +242,18 @@ public class Trigger extends GenericModel {
    */
   public String getFilter() {
     return filter;
+  }
+
+  /**
+   * Gets the limitWaitingRuns.
+   *
+   * Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run will cause waiting run(s)
+   * to be automatically cancelled.
+   *
+   * @return the limitWaitingRuns
+   */
+  public Boolean isLimitWaitingRuns() {
+    return limitWaitingRuns;
   }
 
   /**

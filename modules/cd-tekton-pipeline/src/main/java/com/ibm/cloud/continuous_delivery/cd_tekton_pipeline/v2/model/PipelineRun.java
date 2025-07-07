@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -10,6 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
+
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2.model;
 
 import java.util.Date;
@@ -53,7 +54,7 @@ public class PipelineRun extends GenericModel {
   @SerializedName("definition_id")
   protected String definitionId;
   protected RunDefinition definition;
-  protected Object description;
+  protected String description;
   protected PipelineRunWorker worker;
   @SerializedName("pipeline_id")
   protected String pipelineId;
@@ -81,7 +82,7 @@ public class PipelineRun extends GenericModel {
   /**
    * Gets the id.
    *
-   * UUID.
+   * Universally Unique Identifier.
    *
    * @return the id
    */
@@ -148,11 +149,11 @@ public class PipelineRun extends GenericModel {
   /**
    * Gets the description.
    *
-   * A description of the PipelineRun.
+   * Optional description for the created PipelineRun.
    *
    * @return the description
    */
-  public Object getDescription() {
+  public String getDescription() {
     return description;
   }
 
