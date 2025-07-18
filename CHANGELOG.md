@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.1...2.0.2) (2025-07-18)
+
+
+### Bug Fixes
+
+* **tekton:** add support for waiting runs limit in triggers ([77866b7](https://github.com/IBM/continuous-delivery-java-sdk/commit/77866b7fb84d5799637e3feec1393614b50f8f1d))
+* **tekton:** further limit_waiting_run updates ([7fb8833](https://github.com/IBM/continuous-delivery-java-sdk/commit/7fb88334396434bd135b6a788526089aa53779b4))
+
 ## [2.0.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.0...2.0.1) (2024-11-09)
 
 
