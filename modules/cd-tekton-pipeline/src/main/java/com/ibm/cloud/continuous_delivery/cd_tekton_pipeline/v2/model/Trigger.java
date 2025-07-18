@@ -56,13 +56,13 @@ public class Trigger extends GenericModel {
   protected Long maxConcurrentRuns;
   protected Boolean enabled;
   protected Boolean favorite;
+  @SerializedName("limit_waiting_runs")
+  protected Boolean limitWaitingRuns;
   @SerializedName("enable_events_from_forks")
   protected Boolean enableEventsFromForks;
   protected TriggerSource source;
   protected List<String> events;
   protected String filter;
-  @SerializedName("limit_waiting_runs")
-  protected Boolean limitWaitingRuns;
   protected String cron;
   protected String timezone;
   protected GenericSecret secret;
@@ -196,6 +196,18 @@ public class Trigger extends GenericModel {
   }
 
   /**
+   * Gets the limitWaitingRuns.
+   *
+   * Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run will cause any other
+   * waiting run(s) to be automatically cancelled.
+   *
+   * @return the limitWaitingRuns
+   */
+  public Boolean isLimitWaitingRuns() {
+    return limitWaitingRuns;
+  }
+
+  /**
    * Gets the enableEventsFromForks.
    *
    * When enabled, pull request events from forks of the selected repository will trigger a pipeline run.
@@ -242,18 +254,6 @@ public class Trigger extends GenericModel {
    */
   public String getFilter() {
     return filter;
-  }
-
-  /**
-   * Gets the limitWaitingRuns.
-   *
-   * Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run will cause waiting run(s)
-   * to be automatically cancelled.
-   *
-   * @return the limitWaitingRuns
-   */
-  public Boolean isLimitWaitingRuns() {
-    return limitWaitingRuns;
   }
 
   /**

@@ -490,8 +490,8 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
   /**
    * Gets the limitWaitingRuns.
    *
-   * Only used for SCM triggers. Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run
-   * will cause waiting run(s) to be automatically cancelled.
+   * Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run will cause any other
+   * waiting run(s) to be automatically cancelled.
    *
    * @return the limitWaitingRuns
    */
