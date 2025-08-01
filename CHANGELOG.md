@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.2...2.0.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* add ca-mon support in pipeline ([6c88820](https://github.com/IBM/continuous-delivery-java-sdk/commit/6c8882074d0faab8dbf4ed093b2e8b99f466ff35))
+
 ## [2.0.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.1...2.0.2) (2025-07-18)
 
 
