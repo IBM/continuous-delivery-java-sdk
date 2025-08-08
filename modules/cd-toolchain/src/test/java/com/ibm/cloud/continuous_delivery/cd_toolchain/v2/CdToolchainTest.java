@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -88,6 +88,7 @@ public class CdToolchainTest {
     assertEquals(CdToolchain.getServiceUrlForRegion("jp-tok"), "https://api.jp-tok.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("au-syd"), "https://api.au-syd.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("ca-tor"), "https://api.ca-tor.devops.cloud.ibm.com/toolchain/v2");
+    assertEquals(CdToolchain.getServiceUrlForRegion("ca-mon"), "https://api.ca-mon.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("br-sao"), "https://api.br-sao.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("eu-es"), "https://api.eu-es.devops.cloud.ibm.com/toolchain/v2");
   }
