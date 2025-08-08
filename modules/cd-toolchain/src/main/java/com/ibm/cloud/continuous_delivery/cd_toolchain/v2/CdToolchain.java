@@ -82,7 +82,7 @@ public class CdToolchain extends BaseService {
 
     m.put("ca-tor", "https://api.ca-tor.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the ca-tor region
 
-    m.put("ca-mon", "https://api.ca-mon.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the ca-mon region
+    m.put("ca-mon", "https://api.ca-mon.devops.cloud.ibm.com/toolchain/v2"); // Montreal (ca-mon) is a limited-availability region and not generally available. The toolchain API endpoint in the ca-mon region
 
     m.put("br-sao", "https://api.br-sao.devops.cloud.ibm.com/toolchain/v2"); // The toolchain API endpoint in the br-sao region
 
