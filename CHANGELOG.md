@@ -1,3 +1,43 @@
+## [2.0.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.2...2.0.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* add ca-mon support in pipeline ([6c88820](https://github.com/IBM/continuous-delivery-java-sdk/commit/6c8882074d0faab8dbf4ed093b2e8b99f466ff35))
+
+## [2.0.2](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.1...2.0.2) (2025-07-18)
+
+
+### Bug Fixes
+
+* **tekton:** add support for waiting runs limit in triggers ([77866b7](https://github.com/IBM/continuous-delivery-java-sdk/commit/77866b7fb84d5799637e3feec1393614b50f8f1d))
+* **tekton:** further limit_waiting_run updates ([7fb8833](https://github.com/IBM/continuous-delivery-java-sdk/commit/7fb88334396434bd135b6a788526089aa53779b4))
+
+## [2.0.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.0...2.0.1) (2024-11-09)
+
+
+### Bug Fixes
+
+* Update signing certificate ([#47](https://github.com/IBM/continuous-delivery-java-sdk/issues/47)) ([029d7b1](https://github.com/IBM/continuous-delivery-java-sdk/commit/029d7b131c6b6f97c6aff528dec40861ead98b11)), closes [/github.com/IBM/ibm-cloud-sdk-common/blob/main/JavaDeploy.md#3](https://github.com//github.com/IBM/ibm-cloud-sdk-common/blob/main/JavaDeploy.md/issues/3)
+
+# [2.0.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.9.0...2.0.0) (2024-10-16)
+
+
+### Features
+
+* **toolchain:** add text plain object property for createToolchainEvents ([#46](https://github.com/IBM/continuous-delivery-java-sdk/issues/46)) ([16c8c0c](https://github.com/IBM/continuous-delivery-java-sdk/commit/16c8c0cf88416510467411a0ed0c21feda955ab1))
+
+
+### BREAKING CHANGES
+
+* **toolchain:** the textPlain string property is being replaced by a ToolchainEventPrototypeDataTextPlain object. String values must be provided using the ToolchainEventPrototypeDataTextPlain.content property
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
+* fix to test
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
 # [1.9.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/1.8.0...1.9.0) (2024-10-03)
 
 

@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2024.
+ * (C) Copyright IBM Corp. 2025.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -10,6 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
+
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2.model;
 
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
   protected List<String> tags;
   protected WorkerIdentity worker;
   protected Long maxConcurrentRuns;
+  protected Boolean limitWaitingRuns;
   protected Boolean enabled;
   protected GenericSecret secret;
   protected String cron;
@@ -77,6 +79,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     private List<String> tags;
     private WorkerIdentity worker;
     private Long maxConcurrentRuns;
+    private Boolean limitWaitingRuns;
     private Boolean enabled;
     private GenericSecret secret;
     private String cron;
@@ -100,6 +103,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
       this.tags = createTektonPipelineTriggerOptions.tags;
       this.worker = createTektonPipelineTriggerOptions.worker;
       this.maxConcurrentRuns = createTektonPipelineTriggerOptions.maxConcurrentRuns;
+      this.limitWaitingRuns = createTektonPipelineTriggerOptions.limitWaitingRuns;
       this.enabled = createTektonPipelineTriggerOptions.enabled;
       this.secret = createTektonPipelineTriggerOptions.secret;
       this.cron = createTektonPipelineTriggerOptions.cron;
@@ -142,9 +146,9 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     }
 
     /**
-     * Adds an tags to tags.
+     * Adds a new element to tags.
      *
-     * @param tags the new tags
+     * @param tags the new element to be added
      * @return the CreateTektonPipelineTriggerOptions builder
      */
     public Builder addTags(String tags) {
@@ -158,9 +162,9 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     }
 
     /**
-     * Adds an events to events.
+     * Adds a new element to events.
      *
-     * @param events the new events
+     * @param events the new element to be added
      * @return the CreateTektonPipelineTriggerOptions builder
      */
     public Builder addEvents(String events) {
@@ -248,6 +252,17 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
      */
     public Builder maxConcurrentRuns(long maxConcurrentRuns) {
       this.maxConcurrentRuns = maxConcurrentRuns;
+      return this;
+    }
+
+    /**
+     * Set the limitWaitingRuns.
+     *
+     * @param limitWaitingRuns the limitWaitingRuns
+     * @return the CreateTektonPipelineTriggerOptions builder
+     */
+    public Builder limitWaitingRuns(Boolean limitWaitingRuns) {
+      this.limitWaitingRuns = limitWaitingRuns;
       return this;
     }
 
@@ -370,6 +385,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     tags = builder.tags;
     worker = builder.worker;
     maxConcurrentRuns = builder.maxConcurrentRuns;
+    limitWaitingRuns = builder.limitWaitingRuns;
     enabled = builder.enabled;
     secret = builder.secret;
     cron = builder.cron;
@@ -469,6 +485,18 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
    */
   public Long maxConcurrentRuns() {
     return maxConcurrentRuns;
+  }
+
+  /**
+   * Gets the limitWaitingRuns.
+   *
+   * Flag that will limit the trigger to a maximum of one waiting run. A newly triggered run will cause any other
+   * waiting run(s) to be automatically cancelled.
+   *
+   * @return the limitWaitingRuns
+   */
+  public Boolean limitWaitingRuns() {
+    return limitWaitingRuns;
   }
 
   /**
