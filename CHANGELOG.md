@@ -1,3 +1,29 @@
+# [3.0.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.3...3.0.0) (2025-08-11)
+
+
+### Bug Fixes
+
+* add ca-mon support in toolchains ([#51](https://github.com/IBM/continuous-delivery-java-sdk/issues/51)) ([e09d8ae](https://github.com/IBM/continuous-delivery-java-sdk/commit/e09d8aed0a3e7f3e9cbe5a5eceda989b29b1e281))
+
+
+### BREAKING CHANGES
+
+* the textPlain string property is being replaced by a ToolchainEventPrototypeDataTextPlain object. String values must be provided using the ToolchainEventPrototypeDataTextPlain.content property
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
+* fix to test
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
+* fix: add ca-mon support in toolchains
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
+* fix comment
+
+Signed-off-by: Omar Al Bastami <omar.albastami@ibm.com>
+
 ## [2.0.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.2...2.0.3) (2025-08-01)
 
 
