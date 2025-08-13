@@ -87,6 +87,7 @@ public class TriggerPatchTest {
       .filter("header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'")
       .favorite(false)
       .enableEventsFromForks(false)
+      .disableDraftEvents(false)
       .build();
     assertEquals(triggerPatchModel.type(), "manual");
     assertEquals(triggerPatchModel.name(), "start-deploy");
@@ -104,6 +105,7 @@ public class TriggerPatchTest {
     assertEquals(triggerPatchModel.filter(), "header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'");
     assertEquals(triggerPatchModel.favorite(), Boolean.valueOf(false));
     assertEquals(triggerPatchModel.enableEventsFromForks(), Boolean.valueOf(false));
+    assertEquals(triggerPatchModel.disableDraftEvents(), Boolean.valueOf(false));
 
     String json = TestUtilities.serialize(triggerPatchModel);
 
@@ -123,6 +125,7 @@ public class TriggerPatchTest {
     assertEquals(triggerPatchModelNew.filter(), "header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'");
     assertEquals(triggerPatchModelNew.favorite(), Boolean.valueOf(false));
     assertEquals(triggerPatchModelNew.enableEventsFromForks(), Boolean.valueOf(false));
+    assertEquals(triggerPatchModelNew.disableDraftEvents(), Boolean.valueOf(false));
   }
   @Test
   public void testTriggerPatchAsPatch() throws Throwable {
@@ -166,6 +169,7 @@ public class TriggerPatchTest {
       .filter("header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'")
       .favorite(false)
       .enableEventsFromForks(false)
+      .disableDraftEvents(false)
       .build();
 
     Map<String, Object> mergePatch = triggerPatchModel.asPatch();
@@ -186,6 +190,7 @@ public class TriggerPatchTest {
     assertEquals(mergePatch.get("filter"), "header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'");
     assertTrue(mergePatch.containsKey("favorite"));
     assertTrue(mergePatch.containsKey("enable_events_from_forks"));
+    assertTrue(mergePatch.containsKey("disable_draft_events"));
   }
 
 }

@@ -87,6 +87,7 @@ public class CreateTektonPipelineTriggerOptionsTest {
       .filter("header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'")
       .favorite(false)
       .enableEventsFromForks(false)
+      .disableDraftEvents(false)
       .build();
     assertEquals(createTektonPipelineTriggerOptionsModel.pipelineId(), "94619026-912b-4d92-8f51-6c74f0692d90");
     assertEquals(createTektonPipelineTriggerOptionsModel.type(), "manual");
@@ -105,6 +106,7 @@ public class CreateTektonPipelineTriggerOptionsTest {
     assertEquals(createTektonPipelineTriggerOptionsModel.filter(), "header['x-github-event'] == 'push' && body.ref == 'refs/heads/main'");
     assertEquals(createTektonPipelineTriggerOptionsModel.favorite(), Boolean.valueOf(false));
     assertEquals(createTektonPipelineTriggerOptionsModel.enableEventsFromForks(), Boolean.valueOf(false));
+    assertEquals(createTektonPipelineTriggerOptionsModel.disableDraftEvents(), Boolean.valueOf(false));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)
