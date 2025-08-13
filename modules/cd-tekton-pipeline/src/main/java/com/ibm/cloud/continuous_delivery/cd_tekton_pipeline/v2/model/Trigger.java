@@ -60,6 +60,8 @@ public class Trigger extends GenericModel {
   protected Boolean limitWaitingRuns;
   @SerializedName("enable_events_from_forks")
   protected Boolean enableEventsFromForks;
+  @SerializedName("disable_draft_events")
+  protected Boolean disableDraftEvents;
   protected TriggerSource source;
   protected List<String> events;
   protected String filter;
@@ -216,6 +218,17 @@ public class Trigger extends GenericModel {
    */
   public Boolean isEnableEventsFromForks() {
     return enableEventsFromForks;
+  }
+
+  /**
+   * Gets the disableDraftEvents.
+   *
+   * Prevent new pipeline runs from being triggered by events from draft pull requests.
+   *
+   * @return the disableDraftEvents
+   */
+  public Boolean isDisableDraftEvents() {
+    return disableDraftEvents;
   }
 
   /**
