@@ -50,6 +50,7 @@ public class TriggerScmTriggerTest {
     assertNull(triggerScmTriggerModel.isFavorite());
     assertNull(triggerScmTriggerModel.isLimitWaitingRuns());
     assertNull(triggerScmTriggerModel.isEnableEventsFromForks());
+    assertNull(triggerScmTriggerModel.isDisableDraftEvents());
     assertNull(triggerScmTriggerModel.getSource());
     assertNull(triggerScmTriggerModel.getEvents());
     assertNull(triggerScmTriggerModel.getFilter());

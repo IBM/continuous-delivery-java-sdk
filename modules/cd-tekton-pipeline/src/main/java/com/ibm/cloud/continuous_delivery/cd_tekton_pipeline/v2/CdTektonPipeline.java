@@ -119,7 +119,7 @@ public class CdTektonPipeline extends BaseService {
 
     m.put("ca-tor", "https://api.ca-tor.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the ca-tor region.
 
-    m.put("ca-mon", "https://api.ca-mon.devops.cloud.ibm.com/pipeline/v2"); // Montreal (ca-mon) is a limited-availability region and not generally available. The host URL for Tekton Pipeline Service in the ca-mon region.
+    m.put("ca-mon", "https://api.ca-mon.devops.cloud.ibm.com/pipeline/v2"); // Montreal (ca-mon) is a limited availability region and not generally available. The host URL for Tekton Pipeline Service in the ca-mon region.
 
     m.put("br-sao", "https://api.br-sao.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the br-sao region.
     _regionalEndpoints = Collections.unmodifiableMap(m);
@@ -935,6 +935,9 @@ public class CdTektonPipeline extends BaseService {
     }
     if (createTektonPipelineTriggerOptions.enableEventsFromForks() != null) {
       contentJson.addProperty("enable_events_from_forks", createTektonPipelineTriggerOptions.enableEventsFromForks());
+    }
+    if (createTektonPipelineTriggerOptions.disableDraftEvents() != null) {
+      contentJson.addProperty("disable_draft_events", createTektonPipelineTriggerOptions.disableDraftEvents());
     }
     builder.bodyJson(contentJson);
     ResponseConverter<Trigger> responseConverter =

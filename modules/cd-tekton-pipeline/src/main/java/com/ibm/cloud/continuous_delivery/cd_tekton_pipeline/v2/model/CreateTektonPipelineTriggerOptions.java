@@ -67,6 +67,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
   protected String filter;
   protected Boolean favorite;
   protected Boolean enableEventsFromForks;
+  protected Boolean disableDraftEvents;
 
   /**
    * Builder.
@@ -89,6 +90,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     private String filter;
     private Boolean favorite;
     private Boolean enableEventsFromForks;
+    private Boolean disableDraftEvents;
 
     /**
      * Instantiates a new Builder from an existing CreateTektonPipelineTriggerOptions instance.
@@ -113,6 +115,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
       this.filter = createTektonPipelineTriggerOptions.filter;
       this.favorite = createTektonPipelineTriggerOptions.favorite;
       this.enableEventsFromForks = createTektonPipelineTriggerOptions.enableEventsFromForks;
+      this.disableDraftEvents = createTektonPipelineTriggerOptions.disableDraftEvents;
     }
 
     /**
@@ -365,6 +368,17 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
       this.enableEventsFromForks = enableEventsFromForks;
       return this;
     }
+
+    /**
+     * Set the disableDraftEvents.
+     *
+     * @param disableDraftEvents the disableDraftEvents
+     * @return the CreateTektonPipelineTriggerOptions builder
+     */
+    public Builder disableDraftEvents(Boolean disableDraftEvents) {
+      this.disableDraftEvents = disableDraftEvents;
+      return this;
+    }
   }
 
   protected CreateTektonPipelineTriggerOptions() { }
@@ -395,6 +409,7 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
     filter = builder.filter;
     favorite = builder.favorite;
     enableEventsFromForks = builder.enableEventsFromForks;
+    disableDraftEvents = builder.disableDraftEvents;
   }
 
   /**
@@ -606,6 +621,17 @@ public class CreateTektonPipelineTriggerOptions extends GenericModel {
    */
   public Boolean enableEventsFromForks() {
     return enableEventsFromForks;
+  }
+
+  /**
+   * Gets the disableDraftEvents.
+   *
+   * Prevent new pipeline runs from being triggered by events from draft pull requests.
+   *
+   * @return the disableDraftEvents
+   */
+  public Boolean disableDraftEvents() {
+    return disableDraftEvents;
   }
 }
 

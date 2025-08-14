@@ -73,6 +73,8 @@ public class TriggerPatch extends GenericModel {
   protected Boolean favorite;
   @SerializedName("enable_events_from_forks")
   protected Boolean enableEventsFromForks;
+  @SerializedName("disable_draft_events")
+  protected Boolean disableDraftEvents;
 
   /**
    * Builder.
@@ -94,6 +96,7 @@ public class TriggerPatch extends GenericModel {
     private String filter;
     private Boolean favorite;
     private Boolean enableEventsFromForks;
+    private Boolean disableDraftEvents;
 
     /**
      * Instantiates a new Builder from an existing TriggerPatch instance.
@@ -117,6 +120,7 @@ public class TriggerPatch extends GenericModel {
       this.filter = triggerPatch.filter;
       this.favorite = triggerPatch.favorite;
       this.enableEventsFromForks = triggerPatch.enableEventsFromForks;
+      this.disableDraftEvents = triggerPatch.disableDraftEvents;
     }
 
     /**
@@ -343,6 +347,17 @@ public class TriggerPatch extends GenericModel {
       this.enableEventsFromForks = enableEventsFromForks;
       return this;
     }
+
+    /**
+     * Set the disableDraftEvents.
+     *
+     * @param disableDraftEvents the disableDraftEvents
+     * @return the TriggerPatch builder
+     */
+    public Builder disableDraftEvents(Boolean disableDraftEvents) {
+      this.disableDraftEvents = disableDraftEvents;
+      return this;
+    }
   }
 
   protected TriggerPatch() { }
@@ -364,6 +379,7 @@ public class TriggerPatch extends GenericModel {
     filter = builder.filter;
     favorite = builder.favorite;
     enableEventsFromForks = builder.enableEventsFromForks;
+    disableDraftEvents = builder.disableDraftEvents;
   }
 
   /**
@@ -563,6 +579,17 @@ public class TriggerPatch extends GenericModel {
    */
   public Boolean enableEventsFromForks() {
     return enableEventsFromForks;
+  }
+
+  /**
+   * Gets the disableDraftEvents.
+   *
+   * Prevent new pipeline runs from being triggered by events from draft pull requests.
+   *
+   * @return the disableDraftEvents
+   */
+  public Boolean disableDraftEvents() {
+    return disableDraftEvents;
   }
 
   /**
