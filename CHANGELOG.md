@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/IBM/continuous-delivery-java-sdk/compare/3.0.0...3.0.1) (2025-08-14)
+
+
+### Bug Fixes
+
+* add draft PR events support ([1aaac3e](https://github.com/IBM/continuous-delivery-java-sdk/commit/1aaac3ed1e0107e907420da67f880c991029b132))
+
 # [3.0.0](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.3...3.0.0) (2025-08-11)
 
 
