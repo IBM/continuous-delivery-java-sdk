@@ -1,3 +1,11 @@
+## [2.0.4](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.3...2.0.4) (2025-08-19)
+
+
+### Bug Fixes
+
+* add ca-mon support in toolchains ([197972e](https://github.com/IBM/continuous-delivery-java-sdk/commit/197972ebff3025f3aaf05795058412f51e650e33))
+* add draft PR events support ([7493334](https://github.com/IBM/continuous-delivery-java-sdk/commit/7493334a22277eef1a0ac81f0d61ff3739c6bad8))
+
 ## [2.0.3](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.2...2.0.3) (2025-08-01)
 
 
