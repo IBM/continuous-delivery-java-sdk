@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2025.
+ * (C) Copyright IBM Corp. 2026.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.103.0-e8b84313-20250402-201816
+ * IBM OpenAPI SDK Code Generator Version: 3.112.0-f88e9264-20260220-115155
  */
 
 package com.ibm.cloud.continuous_delivery.cd_tekton_pipeline.v2;
@@ -237,7 +237,7 @@ public class CdTektonPipeline extends BaseService {
   /**
    * Update Tekton pipeline data.
    *
-   * This request updates Tekton pipeline data, but you can only change worker ID in this endpoint. Use other endpoints
+   * This request updates Tekton pipeline data, such as the worker ID or build number, for example. Use other endpoints
    * such as /definitions, /triggers, and /properties for other configuration updates.
    *
    * @param updateTektonPipelineOptions the {@link UpdateTektonPipelineOptions} containing the options for the call
