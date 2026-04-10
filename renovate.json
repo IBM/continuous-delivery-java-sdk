@@ -7,6 +7,10 @@
     {
       "matchManagers": ["github-actions"],
       "enabled": false
+    },
+    {
+      "matchPackageNames": ["com.puppycrawl.tools:checkstyle"],
+      "enabled": false
     }
   ]
 }
