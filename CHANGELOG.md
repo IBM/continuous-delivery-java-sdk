@@ -1,3 +1,10 @@
+## [2.0.8](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.7...2.0.8) (2026-04-10)
+
+
+### Bug Fixes
+
+* **deps:** update slf4j monorepo to v2.0.17 ([c696e2a](https://github.com/IBM/continuous-delivery-java-sdk/commit/c696e2af8d91a40bbdadd080bb723e9aac4e0be2))
+
 ## [2.0.7](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.6...2.0.7) (2026-03-09)
 
 
