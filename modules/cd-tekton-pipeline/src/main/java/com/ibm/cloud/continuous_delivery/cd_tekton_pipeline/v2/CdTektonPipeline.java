@@ -263,9 +263,9 @@ public class CdTektonPipeline extends BaseService {
   }
 
   /**
-   * Delete Tekton pipeline instance.
+   * Delete a Tekton pipeline instance.
    *
-   * This request deletes Tekton pipeline instance that is associated with the pipeline toolchain integration.
+   * This request deletes the Tekton pipeline instance that is associated with the pipeline toolchain integration.
    *
    * @param deleteTektonPipelineOptions the {@link DeleteTektonPipelineOptions} containing the options for the call
    * @return a {@link ServiceCall} with a void result
@@ -287,7 +287,7 @@ public class CdTektonPipeline extends BaseService {
   /**
    * List pipeline run records.
    *
-   * This request lists pipeline run records, which has data about the runs, such as status, user_info, trigger and
+   * This request lists pipeline run records, which have data about the runs, such as status, user_info, trigger and
    * other information. Default limit is 50.
    *
    * @param listTektonPipelineRunsOptions the {@link ListTektonPipelineRunsOptions} containing the options for the call
