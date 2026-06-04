@@ -45,8 +45,8 @@ The IBM Cloud Continuous Delivery Java SDK allows developers to programmatically
 
 Service Name | Artifact Coordinates
 --- | ---
-[Toolchain API](https://cloud.ibm.com/apidocs/toolchain?code=java) | com.ibm.cloud:cd-toolchain:2.0.8
-[Tekton Pipeline API](https://cloud.ibm.com/apidocs/tekton-pipeline?code=java) | com.ibm.cloud:cd-tekton-pipeline:2.0.8
+[Toolchain API](https://cloud.ibm.com/apidocs/toolchain?code=java) | com.ibm.cloud:cd-toolchain:2.0.9
+[Tekton Pipeline API](https://cloud.ibm.com/apidocs/tekton-pipeline?code=java) | com.ibm.cloud:cd-tekton-pipeline:2.0.9
 
 Table 1. IBM Cloud services
 
@@ -60,7 +60,7 @@ Table 1. IBM Cloud services
 
 ## Installation
 
-The current version of this SDK is: 2.0.8
+The current version of this SDK is: 2.0.9
 
 Each service's artifact coordinates are listed in the table above.
 
@@ -79,20 +79,20 @@ Here are examples for maven and gradle:
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>cd-toolchain</artifactId>
-    <version>2.0.8</version>
+    <version>2.0.9</version>
 </dependency>
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>cd-tekton-pipeline</artifactId>
-    <version>2.0.8</version>
+    <version>2.0.9</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```gradle
-compile 'com.ibm.cloud:cd-toolchain:2.0.8'
-compile 'com.ibm.cloud:cd-tekton-pipeline:2.0.8'
+compile 'com.ibm.cloud:cd-toolchain:2.0.9'
+compile 'com.ibm.cloud:cd-tekton-pipeline:2.0.9'
 ```
 
 ## Using the SDK
