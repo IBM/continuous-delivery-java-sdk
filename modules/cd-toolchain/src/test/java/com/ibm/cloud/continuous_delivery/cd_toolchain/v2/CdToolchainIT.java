@@ -326,7 +326,26 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
         .build();
 
       // Invoke operation
-      Response<ToolchainEventPost> response = service.createToolchainEvent(createToolchainEventOptions).execute();
+      // Retry logic with exponential backoff to wait for event creation to succeed
+      Response<ToolchainEventPost> response = null;
+      int maxRetries = 10;
+      long baseDelay = 1000L;
+      long maxDelay = 30000L;
+
+      for (int i = 0; i < maxRetries; i++) {
+        try {
+          response = service.createToolchainEvent(createToolchainEventOptions).execute();
+          System.out.printf("Event was created successfully on attempt %d.%n", i + 1);
+          break;
+        } catch (Exception err) {
+          if (i == maxRetries - 1) {
+            throw err;
+          }
+          long retryDelay = Math.min(baseDelay * (1L << i), maxDelay);
+          System.out.printf("Attempt %d creating event failed, retrying in %dms... Error: %s%n", i + 1, retryDelay, err.getMessage());
+          Thread.sleep(retryDelay);
+        }
+      }
       // Validate response
       assertNotNull(response);
       assertEquals(response.getStatusCode(), 200);
@@ -360,7 +379,26 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
         .build();
 
       // Invoke operation
-      Response<ToolchainEventPost> response = service.createToolchainEvent(createToolchainEventOptions).execute();
+      // Retry logic with exponential backoff to wait for event creation to succeed
+      Response<ToolchainEventPost> response = null;
+      int maxRetries = 10;
+      long baseDelay = 1000L;
+      long maxDelay = 30000L;
+
+      for (int i = 0; i < maxRetries; i++) {
+        try {
+          response = service.createToolchainEvent(createToolchainEventOptions).execute();
+          System.out.printf("Event was created successfully on attempt %d.%n", i + 1);
+          break;
+        } catch (Exception err) {
+          if (i == maxRetries - 1) {
+            throw err;
+          }
+          long retryDelay = Math.min(baseDelay * (1L << i), maxDelay);
+          System.out.printf("Attempt %d creating event failed, retrying in %dms... Error: %s%n", i + 1, retryDelay, err.getMessage());
+          Thread.sleep(retryDelay);
+        }
+      }
       // Validate response
       assertNotNull(response);
       assertEquals(response.getStatusCode(), 200);
