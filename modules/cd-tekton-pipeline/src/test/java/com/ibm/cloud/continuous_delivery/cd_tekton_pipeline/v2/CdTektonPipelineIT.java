@@ -54,6 +54,7 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
   String triggerPropIdLink = null;
   String runIdLink = null;
   String rerunIdLink = null;
+  String runLogIdLink = null;
   String propertyName = "prop1";
   String triggerName = "start-deploy";
   String triggerPropName = "triggerProp1";
@@ -878,7 +879,6 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
     }
   }
 
-/*
   @Test(dependsOnMethods = { "testRerunTektonPipelineRun" })
   public void testGetTektonPipelineRunLogs() throws Exception {
     try {
@@ -895,6 +895,12 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
 
       LogsCollection logsCollectionResult = response.getResult();
       assertNotNull(logsCollectionResult);
+      
+      // Store the first log ID for use in testGetTektonPipelineRunLogContent
+      if (logsCollectionResult.getLogs() != null && !logsCollectionResult.getLogs().isEmpty()) {
+        runLogIdLink = logsCollectionResult.getLogs().get(0).getId();
+        assertNotNull(runLogIdLink);
+      }
     } catch (ServiceResponseException e) {
         fail(String.format("Service returned status code %d: %s%nError details: %s",
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
@@ -907,11 +913,30 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
       GetTektonPipelineRunLogContentOptions getTektonPipelineRunLogContentOptions = new GetTektonPipelineRunLogContentOptions.Builder()
         .pipelineId(pipelineIdLink)
         .pipelineRunId(runIdLink)
-        .id()
+        .id(runLogIdLink)
         .build();
 
       // Invoke operation
-      Response<StepLog> response = pipelineSvc.getTektonPipelineRunLogContent(getTektonPipelineRunLogContentOptions).execute();
+      // Retry logic with exponential backoff to wait for log content to be available
+      Response<StepLog> response = null;
+      int maxRetries = 10;
+      long baseDelay = 1000L;
+      long maxDelay = 30000L;
+
+      for (int i = 0; i < maxRetries; i++) {
+        try {
+          response = pipelineSvc.getTektonPipelineRunLogContent(getTektonPipelineRunLogContentOptions).execute();
+          System.out.printf("Log content was retrieved successfully on attempt %d.%n", i + 1);
+          break;
+        } catch (Exception err) {
+          if (i == maxRetries - 1) {
+            throw err;
+          }
+          long retryDelay = Math.min(baseDelay * (1L << i), maxDelay);
+          System.out.printf("Attempt %d getting log content failed, retrying in %dms... Error: %s%n", i + 1, retryDelay, err.getMessage());
+          Thread.sleep(retryDelay);
+        }
+      }
       // Validate response
       assertNotNull(response);
       assertEquals(response.getStatusCode(), 200);
@@ -923,7 +948,6 @@ public class CdTektonPipelineIT extends SdkIntegrationTestBase {
           e.getStatusCode(), e.getMessage(), e.getDebuggingInfo()));
     }
   }
-*/
 
 
   @Test(dependsOnMethods = { "testCreateTektonPipeline", "testCreateTektonPipelineRun", "testGetTektonPipelineRun", "testListTektonPipelineRuns", "testListTektonPipelineRunsWithPager" })
