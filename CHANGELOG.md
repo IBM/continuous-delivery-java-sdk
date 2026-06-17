@@ -1,3 +1,10 @@
+## [2.0.10](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.9...2.0.10) (2026-06-17)
+
+
+### Bug Fixes
+
+* **deps:** update okhttp monorepo to v5.4.0 ([b16d954](https://github.com/IBM/continuous-delivery-java-sdk/commit/b16d954e35769eb62618ee242bbda4dc3f2c1c8e))
+
 ## [2.0.9](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.8...2.0.9) (2026-06-04)
 
 
