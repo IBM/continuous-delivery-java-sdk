@@ -68,7 +68,21 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.version }}" ]; then
             echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            # When on main branch, get the latest release tag from GitHub
+            LATEST_TAG=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/latest" | \
+              jq -r '.tag_name // empty')
+            
+            if [ -z "$LATEST_TAG" ]; then
+              echo "Error: Could not fetch latest release tag from GitHub"
+              exit 1
+            fi
+            
+            echo "version=$LATEST_TAG" >> $GITHUB_OUTPUT
+            echo "Latest release version: $LATEST_TAG"
           else
+            # For other branches, use the branch/tag name
             echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi
 
@@ -112,14 +126,48 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.version }}" ]; then
             echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            # When on main branch, get the latest release tag from GitHub
+            LATEST_TAG=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/latest" | \
+              jq -r '.tag_name // empty')
+            
+            if [ -z "$LATEST_TAG" ]; then
+              echo "Error: Could not fetch latest release tag from GitHub"
+              exit 1
+            fi
+            
+            echo "version=$LATEST_TAG" >> $GITHUB_OUTPUT
+            echo "Latest release version: $LATEST_TAG"
           else
+            # For other branches, use the branch/tag name
             echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Check if version exists in Maven Central
+        id: check_version
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          echo "Checking if version $VERSION exists in Maven Central..."
+          
+          # Check if the main artifact exists in Maven Central
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://repo1.maven.org/maven2/com/ibm/cloud/continuous-delivery/${VERSION}/continuous-delivery-${VERSION}.pom")
+          
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Version $VERSION already exists in Maven Central. Skipping deployment."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Version $VERSION does not exist in Maven Central. Proceeding with deployment."
+          fi
+
       - name: Set Maven version
+        if: steps.check_version.outputs.exists == 'false'
         run: mvn versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false
 
       - name: Deploy to Maven Central
+        if: steps.check_version.outputs.exists == 'false'
         env:
           # Required variables and secrets for publishing to Maven Central
           # GNU Privacy Guard variables
