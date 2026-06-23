@@ -628,9 +628,9 @@ public class CdToolchainTest {
     // Construct an instance of the CreateToolOptions model
     CreateToolOptions createToolOptionsModel = new CreateToolOptions.Builder()
       .toolchainId("testString")
-      .toolTypeId("draservicebroker")
+      .toolTypeId("pipeline")
       .name("testString")
-      .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+      .parameters(java.util.Collections.singletonMap("type", "tekton"))
       .build();
 
     // Invoke createTool() with a valid options model and verify the result
@@ -785,8 +785,8 @@ public class CdToolchainTest {
     // Construct an instance of the ToolchainToolPrototypePatch model
     ToolchainToolPrototypePatch toolchainToolPrototypePatchModel = new ToolchainToolPrototypePatch.Builder()
       .name("MyTool")
-      .toolTypeId("draservicebroker")
-      .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+      .toolTypeId("pipeline")
+      .parameters(java.util.Collections.singletonMap("type", "tekton"))
       .build();
     Map<String, Object> toolchainToolPrototypePatchModelAsPatch = toolchainToolPrototypePatchModel.asPatch();
 

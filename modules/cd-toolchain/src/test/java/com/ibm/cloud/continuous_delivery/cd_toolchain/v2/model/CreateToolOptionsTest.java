@@ -33,14 +33,14 @@ public class CreateToolOptionsTest {
   public void testCreateToolOptions() throws Throwable {
     CreateToolOptions createToolOptionsModel = new CreateToolOptions.Builder()
       .toolchainId("testString")
-      .toolTypeId("draservicebroker")
+      .toolTypeId("pipeline")
       .name("testString")
-      .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+      .parameters(java.util.Collections.singletonMap("type", "tekton"))
       .build();
     assertEquals(createToolOptionsModel.toolchainId(), "testString");
-    assertEquals(createToolOptionsModel.toolTypeId(), "draservicebroker");
+    assertEquals(createToolOptionsModel.toolTypeId(), "pipeline");
     assertEquals(createToolOptionsModel.name(), "testString");
-    assertEquals(createToolOptionsModel.parameters(), java.util.Collections.singletonMap("anyKey", "anyValue"));
+    assertEquals(createToolOptionsModel.parameters(), java.util.Collections.singletonMap("type", "tekton"));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

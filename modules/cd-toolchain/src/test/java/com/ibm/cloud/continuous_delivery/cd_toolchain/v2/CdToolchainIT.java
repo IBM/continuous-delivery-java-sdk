@@ -147,9 +147,9 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
     try {
       CreateToolOptions createToolOptions = new CreateToolOptions.Builder()
         .toolchainId(toolchainIdLink)
-        .toolTypeId("draservicebroker")
+        .toolTypeId("pipeline")
         .name("testString")
-        .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+        .parameters(java.util.Collections.singletonMap("type", "tekton"))
         .build();
 
       // Invoke operation
@@ -495,8 +495,8 @@ public class CdToolchainIT extends SdkIntegrationTestBase {
     try {
       ToolchainToolPrototypePatch toolchainToolPrototypePatchModel = new ToolchainToolPrototypePatch.Builder()
         .name("MyTool")
-        .toolTypeId("draservicebroker")
-        .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+        .toolTypeId("pipeline")
+        .parameters(java.util.Collections.singletonMap("type", "tekton"))
         .build();
       Map<String, Object> toolchainToolPrototypePatchModelAsPatch = toolchainToolPrototypePatchModel.asPatch();
 
