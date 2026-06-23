@@ -34,33 +34,33 @@ public class ToolchainToolPrototypePatchTest {
   public void testToolchainToolPrototypePatch() throws Throwable {
     ToolchainToolPrototypePatch toolchainToolPrototypePatchModel = new ToolchainToolPrototypePatch.Builder()
       .name("MyTool")
-      .toolTypeId("draservicebroker")
-      .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+      .toolTypeId("pipeline")
+      .parameters(java.util.Collections.singletonMap("type", "tekton"))
       .build();
     assertEquals(toolchainToolPrototypePatchModel.name(), "MyTool");
-    assertEquals(toolchainToolPrototypePatchModel.toolTypeId(), "draservicebroker");
-    assertEquals(toolchainToolPrototypePatchModel.parameters(), java.util.Collections.singletonMap("anyKey", "anyValue"));
+    assertEquals(toolchainToolPrototypePatchModel.toolTypeId(), "pipeline");
+    assertEquals(toolchainToolPrototypePatchModel.parameters(), java.util.Collections.singletonMap("type", "tekton"));
 
     String json = TestUtilities.serialize(toolchainToolPrototypePatchModel);
 
     ToolchainToolPrototypePatch toolchainToolPrototypePatchModelNew = TestUtilities.deserialize(json, ToolchainToolPrototypePatch.class);
     assertTrue(toolchainToolPrototypePatchModelNew instanceof ToolchainToolPrototypePatch);
     assertEquals(toolchainToolPrototypePatchModelNew.name(), "MyTool");
-    assertEquals(toolchainToolPrototypePatchModelNew.toolTypeId(), "draservicebroker");
-    assertEquals(toolchainToolPrototypePatchModelNew.parameters().toString(), java.util.Collections.singletonMap("anyKey", "anyValue").toString());
+    assertEquals(toolchainToolPrototypePatchModelNew.toolTypeId(), "pipeline");
+    assertEquals(toolchainToolPrototypePatchModelNew.parameters().toString(), java.util.Collections.singletonMap("type", "tekton").toString());
   }
   @Test
   public void testToolchainToolPrototypePatchAsPatch() throws Throwable {
     ToolchainToolPrototypePatch toolchainToolPrototypePatchModel = new ToolchainToolPrototypePatch.Builder()
       .name("MyTool")
-      .toolTypeId("draservicebroker")
-      .parameters(java.util.Collections.singletonMap("anyKey", "anyValue"))
+      .toolTypeId("pipeline")
+      .parameters(java.util.Collections.singletonMap("type", "tekton"))
       .build();
 
     Map<String, Object> mergePatch = toolchainToolPrototypePatchModel.asPatch();
 
     assertEquals(mergePatch.get("name"), "MyTool");
-    assertEquals(mergePatch.get("tool_type_id"), "draservicebroker");
+    assertEquals(mergePatch.get("tool_type_id"), "pipeline");
     assertTrue(mergePatch.containsKey("parameters"));
   }
 

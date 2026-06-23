@@ -108,7 +108,8 @@ public class CdToolchainExamples {
       // begin-create_tool
       CreateToolOptions createToolOptions = new CreateToolOptions.Builder()
         .toolchainId(toolchainIdLink)
-        .toolTypeId("draservicebroker")
+        .toolTypeId("pipeline")
+        .parameters(java.util.Collections.singletonMap("type", "tekton"))
         .build();
 
       Response<ToolchainToolPost> response = cdToolchainService.createTool(createToolOptions).execute();
