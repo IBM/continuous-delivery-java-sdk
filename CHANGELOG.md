@@ -1,3 +1,15 @@
+## [2.0.11](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.10...2.0.11) (2026-06-26)
+
+
+### Bug Fixes
+
+* **deps:** update sdk-core-version to v9.26.0 ([bb2544d](https://github.com/IBM/continuous-delivery-java-sdk/commit/bb2544d796bf3c961b9be3f77611334a3f1c91f9))
+
+
+### Reverts
+
+* ci: exclude examples from deploy ([031a6b9](https://github.com/IBM/continuous-delivery-java-sdk/commit/031a6b9c29ff55ba8dc3d109452948cde4aa6445))
+
 ## [2.0.10](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.9...2.0.10) (2026-06-17)
 
 
