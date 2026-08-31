@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2025.
+ * (C) Copyright IBM Corp. 2025, 2026.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -84,13 +84,10 @@ public class CdToolchainTest {
     assertEquals(CdToolchain.getServiceUrlForRegion("us-east"), "https://api.us-east.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("eu-de"), "https://api.eu-de.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("eu-gb"), "https://api.eu-gb.devops.cloud.ibm.com/toolchain/v2");
-    assertEquals(CdToolchain.getServiceUrlForRegion("jp-osa"), "https://api.jp-osa.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("jp-tok"), "https://api.jp-tok.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("au-syd"), "https://api.au-syd.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("ca-tor"), "https://api.ca-tor.devops.cloud.ibm.com/toolchain/v2");
-    assertEquals(CdToolchain.getServiceUrlForRegion("ca-mon"), "https://api.ca-mon.devops.cloud.ibm.com/toolchain/v2");
     assertEquals(CdToolchain.getServiceUrlForRegion("br-sao"), "https://api.br-sao.devops.cloud.ibm.com/toolchain/v2");
-    assertEquals(CdToolchain.getServiceUrlForRegion("eu-es"), "https://api.eu-es.devops.cloud.ibm.com/toolchain/v2");
   }
 
   // Test the listToolchains operation with a valid options model parameter

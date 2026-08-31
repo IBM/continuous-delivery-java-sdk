@@ -109,17 +109,11 @@ public class CdTektonPipeline extends BaseService {
 
     m.put("eu-gb", "https://api.eu-gb.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the eu-gb region.
 
-    m.put("eu-es", "https://api.eu-es.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the eu-es region.
-
-    m.put("jp-osa", "https://api.jp-osa.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the jp-osa region.
-
     m.put("jp-tok", "https://api.jp-tok.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the jp-tok region.
 
     m.put("au-syd", "https://api.au-syd.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the au-syd region.
 
     m.put("ca-tor", "https://api.ca-tor.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the ca-tor region.
-
-    m.put("ca-mon", "https://api.ca-mon.devops.cloud.ibm.com/pipeline/v2"); // Montreal (ca-mon) is a limited availability region and not generally available. The host URL for Tekton Pipeline Service in the ca-mon region.
 
     m.put("br-sao", "https://api.br-sao.devops.cloud.ibm.com/pipeline/v2"); // The host URL for Tekton Pipeline Service in the br-sao region.
     _regionalEndpoints = Collections.unmodifiableMap(m);

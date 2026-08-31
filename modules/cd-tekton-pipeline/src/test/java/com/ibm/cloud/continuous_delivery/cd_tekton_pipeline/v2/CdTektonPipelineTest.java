@@ -135,12 +135,9 @@ public class CdTektonPipelineTest {
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("us-east"), "https://api.us-east.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-de"), "https://api.eu-de.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-gb"), "https://api.eu-gb.devops.cloud.ibm.com/pipeline/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("eu-es"), "https://api.eu-es.devops.cloud.ibm.com/pipeline/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-osa"), "https://api.jp-osa.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("jp-tok"), "https://api.jp-tok.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("au-syd"), "https://api.au-syd.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("ca-tor"), "https://api.ca-tor.devops.cloud.ibm.com/pipeline/v2");
-    assertEquals(CdTektonPipeline.getServiceUrlForRegion("ca-mon"), "https://api.ca-mon.devops.cloud.ibm.com/pipeline/v2");
     assertEquals(CdTektonPipeline.getServiceUrlForRegion("br-sao"), "https://api.br-sao.devops.cloud.ibm.com/pipeline/v2");
   }
 
