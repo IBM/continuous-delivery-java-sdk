@@ -1,3 +1,10 @@
+## [2.0.13](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.12...2.0.13) (2026-09-11)
+
+
+### Bug Fixes
+
+* **deps:** update okhttp3-version to v5.5.0 ([#136](https://github.com/IBM/continuous-delivery-java-sdk/issues/136)) ([d5d936f](https://github.com/IBM/continuous-delivery-java-sdk/commit/d5d936fb8efcc0d90f30380da0a8e8cc46319bec))
+
 ## [2.0.12](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.11...2.0.12) (2026-09-11)
 
 
