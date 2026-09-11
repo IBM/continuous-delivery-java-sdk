@@ -1,3 +1,10 @@
+## [2.0.12](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.11...2.0.12) (2026-09-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.ibm.cloud:sdk-core to v9.27.0 ([#133](https://github.com/IBM/continuous-delivery-java-sdk/issues/133)) ([8b71a94](https://github.com/IBM/continuous-delivery-java-sdk/commit/8b71a941a0e06c0652bfb73c255015b3f1414023))
+
 ## [2.0.11](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.10...2.0.11) (2026-06-26)
 
 
