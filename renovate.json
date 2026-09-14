@@ -5,12 +5,14 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
-      "enabled": false
-    },
-    {
-      "matchPackageNames": ["com.puppycrawl.tools:checkstyle"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "*"
+      ]
     }
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true
 }
