@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.14...2.0.15) (2026-09-29)
+
+
+### Bug Fixes
+
+* **ci:** define explicit GitHub Actions workflow permissions ([#146](https://github.com/IBM/continuous-delivery-java-sdk/issues/146)) ([bfd65ab](https://github.com/IBM/continuous-delivery-java-sdk/commit/bfd65ab2e7526a27c44d9e417929d98b9f16ef19))
+
 ## [2.0.14](https://github.com/IBM/continuous-delivery-java-sdk/compare/2.0.13...2.0.14) (2026-09-11)
 
 
